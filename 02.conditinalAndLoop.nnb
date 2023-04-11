@@ -1,0 +1,386 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Conditional Statement\ndipakai ketika kita ingin menjalankan sebuah program dengan kondisi yang berbeda"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "let age = 21\n\n// conditional statement\n// if condition is true, then execute the code block {}\n// if condition is false, then skip the code block {}\nif (age >= 17) {\n    console.log('You can vote')\n    console.log(\"not restricted\")\n}\n\nconsole.log(\"restricted to vote\")"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "You can vote",
+                                "not restricted",
+                                "restricted to vote",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// multiple conditional statement\nlet nilai = 65\n\nif (nilai >= 80) {\n    console.log(\"Grade A\")\n}\nif (nilai < 80) {\n    console.log(\"Grade B\")\n}\n\nconsole.log(\"End Program\")\n\n// if-else statement to create a 2 conditional statement\nif (nilai >= 80) {\n    console.log(\"Grade A\")\n} else {\n    console.log(\"Grade B\")\n}\nconsole.log(\"End Program\")\n\n// if-else-if statement to create a multiple, more than 2 conditional statement\nlet Grade = \"J\"\n\nif (Grade == \"A\") { \n    console.log(\"Excellent\")\n} else if (Grade == \"B\") { \n    console.log(\"Good\")\n} else if (Grade == \"C\") { \n    console.log(\"Not Bad\")\n} else if (Grade == \"D\") { \n    console.log(\"Bad\")\n} else { \n    console.log(\"Fail\")\n}\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Grade B",
+                                "End Program",
+                                "Grade B",
+                                "End Program",
+                                "Fail",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## (And) && and (Or) || operator\ncompare truthty or falshy comparison -> compare the boolean value\nresult true or false\n\n### truthty and falshy value with && operator\n- true && true -> true\n- true && false -> false\n- false && true -> false\n- false && false -> false\n\n### truthty and falshy value with || operator\n- true || true -> true\n- true || false -> true\n- false || true -> true\n- false || false -> false"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// and && operator\n// if both condition is true, then execute the code block {}\n// if one of the condition is false, then skip the code block {}\n\n8 > 6 && 5 > 3 // true && true => true\n8 > 6 && 5 < 3 // true && false => false\n8 < 6 && 5 > 3 // false && true => false\n8 < 6 && 5 < 3 // false && false => false\n\n// or || operator\n// if one of the condition is true, then execute the code block {}\n// if both condition is false, then skip the code block {}\n\n8 > 6 || 5 > 3 // true || true => true\n8 > 6 || 5 < 3 // true || false => true\n8 < 6 || 5 > 3 // false || true => true\n8 < 6 || 5 < 3 // false || false => false\n\n// not ! operator\n// if condition true, result is false\n!true // false\n!false // true\n!(8 > 6) // false\n!(8 < 6) // true\n!(8 > 6 && 5 > 3) // true && true => !true => false\n!8 // !8 => !true => false\n!0 // !0 => !false => true\n\n// more than 2 falshy or truthy value with && operator\n1 > 2 && 2 > 3 && 3 > 4 // false && false && false => false\n1 > 2 && 2 > 3 && 3 < 4 // false && false && true => false\n1 > 2 && 2 < 3 && 3 > 4 // false && true && false => false\n1 < 2 && 2 < 3 && 3 < 4 // true && true && true => true\n\n// more than 2 falshy or truthy value with || operator\n1 > 2 || 2 > 3 || 3 > 4 // false || false || false => false\n1 > 2 || 2 > 3 || 3 < 4 // false || false || true => true\n1 > 2 || 2 < 3 || 3 > 4 // false || true || false => true\n\n// mix && and || operator\n1 > 2 || 2 > 3 && 3 > 4 // false || false && false => false || false => false\n1 > 2 || 2 > 3 && 3 < 4 // false || false && true => false || true => true"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Example Case for && or || operator\nrangking system with condition\n> category rangking or grade\n- 80 - 100 -> Grade A -> Execelent\n- 70 - 80 -> Grade B -> Good Job\n- 60 - 70 -> Grade C -> Not bad\n- 50 - 60 -> Grade D -> Bad\n- <= 50 -> Grade E -> Failed"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "let nilai = 12\n\nif (nilai >= 80) {\n    console.log(\"Grade A & Excellent\")\n} else if (nilai >= 70 && nilai < 80) {\n    console.log(\"Grade B & Good\")\n} else if (nilai >= 60 && nilai < 70) { \n    console.log(\"Grade C & Not Bad\")\n} else if (nilai >= 50 && nilai < 60) { \n    console.log(\"Grade D & Bad\")\n} else { \n    console.log(\"Grade E & Fail\")\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Grade E & Fail",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## 2nd form of conditional statement\n- Swicth and Case"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// multiple conditional statement\nlet gender = \"laki-laki\"\n\nif (gender === \"laki-laki\") {\n    console.log(\"hobby main game\")\n} else {\n    console.log(\"hobby main boneka\")\n}\n\n// swicth case satement\nswitch(gender) {\n    case \"laki-laki\": // ===\n        console.log(\"hobby main game\")\n        break;\n    default :\n        console.log(\"hobby main boneka\")\n}\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "hobby main game",
+                                "hobby main game",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// multiple conditional statement\nlet nilai = 65\n\nif (nilai >= 80) {\n    console.log(\"Excellent\")\n} else {\n    console.log(\"Not Excellent\")\n}\n\n// swicth case form\nswitch(false) {\n    case nilai >= 80: // ===\n        console.log(\"Excellent\")\n        break;\n    default :\n        console.log(\"Not Excellent\")\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Not Excellent",
+                                "Excellent",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Shortcut for conditional statement -> Ternary operator"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// traditional decrative conditional statement\nlet nilai = 65\n\nif (nilai >= 80) {\n    console.log(\"Excellent\")\n} else {\n    console.log(\"Not Excellent\")\n}\n\n// ternary conditional statement\nlet Message = nilai >= 80 ? \"Excellent\" : \"Not Excellent\"\nconsole.log(Message)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// traditional decrative conditional statement\nlet nilai = 65\n\nif (nilai >= 80) {\n    console.log(\"Excellent\")\n} else if (nilai >= 60 && nilai < 80) {\n    console.log(\"Not Excellent\")\n} else {\n    console.log(\"Bad\")\n}\n\n// ternary conditional statement\nlet message = nilai >= 80 ? \"Excelent\" : nilai >= 60 && nilai < 80 ? \"Not Excellent\" : \"Bad\"\nconsole.log(message)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Not Excellent",
+                                "Not Excellent",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// another form of conditional statement\n// ternary conditional statement\nlet nilai = 90\nlet message = nilai >= 80 ? \"Excellent\" : \"Not Excellent\"\nconsole.log(message)\n\n// && or || operator\nlet message2 = nilai >= 80 && \"Excellent\" || \"Not Excellent\" \n// 90 >= 80 && \"Excelent\" || \"Not Excelent\" => true && \"Excelent\" || \"Not Excelent\" => \"Excelent\" || \"Not Excelent\" => \"Excelent\"\n\n// true && true => true (right true)\n// false && true => false (left false)\n\n// true || true => true (left true)\n// false || true => true (right true)\n// true || false => true (left true)\n// false || false => false (both false)\nconsole.log(message2)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Excellent",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Loop\ndefinisi : melakukan task yang sama secara berulang-ulang\n> declaration :\n- while\n- do.. while\n- for...\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// saya mau menampilkan console.log(\"Hello World\") sebanyak 10 kali\n// console.log(\"Hello World\")\n// console.log(\"Hello World\")\n// console.log(\"Hello World\")\n// console.log(\"Hello World\")\n//.. 10x\n\n// while looop\nlet running = 10\nwhile (running < 10) {\n    // if condition is true, then execute the code block {}\n    console.log(running, \"Hello World\")\n    running++\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "0 Hello World",
+                                "1 Hello World",
+                                "2 Hello World",
+                                "3 Hello World",
+                                "4 Hello World",
+                                "5 Hello World",
+                                "6 Hello World",
+                                "7 Hello World",
+                                "8 Hello World",
+                                "9 Hello World",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// do while\nlet running = 0\ndo {\n    running++\n    console.log(running, \"Hello World\")\n} while (running < 10)\n\n// 1 -> 1x -> 1 < 10\n// 2 -> 2x -> 2 < 10\n// 3 -> 3x -> 3 < 10\n// 4 -> 4x -> 4 < 10\n// 5 -> 5x -> 5 < 10\n// 6 -> 6x -> 6 < 10\n// 7 -> 7x -> 7 < 10\n// 8 -> 8x -> 8 < 10\n// 9 -> 9x -> 9 < 10\n// 10 -> 10x -> 10 < 10"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1 Hello World",
+                                "2 Hello World",
+                                "3 Hello World",
+                                "4 Hello World",
+                                "5 Hello World",
+                                "6 Hello World",
+                                "7 Hello World",
+                                "8 Hello World",
+                                "9 Hello World",
+                                "10 Hello World",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "for (let running = 1; running <= 10; running++) {\n    console.log(running, \"Hello World\")\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1 Hello World",
+                                "3 Hello World",
+                                "5 Hello World",
+                                "7 Hello World",
+                                "9 Hello World",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "for (let running = 1; running <= 10; running++) {\n    if (running % 2 !== 0) {\n        console.log(running, \"Hello World\")\n    } \n}\n\n// it will run 10x, but will console log 5x when condition is true"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1 Hello World",
+                                "3 Hello World",
+                                "5 Hello World",
+                                "7 Hello World",
+                                "9 Hello World",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "for (let running = 1; running <= 10; running += 2) {\n    console.log(running, \"Hello World\")\n}\n// it will run 5x"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1 Hello World",
+                                "3 Hello World",
+                                "5 Hello World",
+                                "7 Hello World",
+                                "9 Hello World",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Break & Continue"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "let running = 0\n\nwhile (true) {\n    console.log(running, \"Hello World\")\n    if (running === 10) { \n        break // will terminate the loop\n    }\n    running++\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "0 Hello World",
+                                "1 Hello World",
+                                "2 Hello World",
+                                "3 Hello World",
+                                "4 Hello World",
+                                "5 Hello World",
+                                "6 Hello World",
+                                "7 Hello World",
+                                "8 Hello World",
+                                "9 Hello World",
+                                "10 Hello World",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// continue -> skip the current iteration\nlet running = 0\n\nwhile(true) {\n    running++\n    if (running % 2 === 0) {\n        console.log(running, \"Hello World\")\n        continue // will skip the current iteration\n    }\n    \n    if (running >= 10) break\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "2 Hello World",
+                                "4 Hello World",
+                                "6 Hello World",
+                                "8 Hello World",
+                                "10 Hello World",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

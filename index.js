@@ -1,5 +1,5 @@
 console.log("Hello World");
 
-const numb = 1
-numb = 2
+let numb = "101"
+numb = numb - 1
 console.log(numb)
