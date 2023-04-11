@@ -1,0 +1,291 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "Hello World"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(\"Hello World\");"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Hello World",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Code Structure\n- statement -> single and multiple, instruction atau perintah yang kita berikan atau kita tulis dalam bentuk code\n- semicolomn ;, optional jika kita tulis staement dalam line yang berbeda\n- comment"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(\"My Name is Aliya.\");\nconsole.log(\"I love Flutter.\");\n\n// multi-single statement in oneline\nconsole.log(\"I studied at Purwadhika\"); console.log(\"I am a student\");\n\nconsole.log(\"I love a dog\") \nconsole.log(\"I love a cat\")\n\n// ini comment\n/* \nmulti line comment\nlalala\n*/"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "My Name is Ale.",
+                                "I love JavaScript.",
+                                "I studied at Purwadhika",
+                                "I am a student",
+                                "I love a dog",
+                                "I love a cat",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Variable\nwadah untuk menyimpan sebuah data yang nantinya akan kita pakai dalam menjalankan sebuah program, declaration : var, let, const, punya scoping"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var fullname = \"Aliya\"\nvar programingLangguage = \"Dart\"\n\nconsole.log(fullname)\nconsole.log(programingLangguage)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Aliya",
+                                "Dart",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// decalre variable with var key\nvar school = \"Purwadhika\"\nvar school = \"Purwadhika Startup and Coding School\"\n\n// jika ada nama varible yang sama, maka yang terakhir akan diambil\n// sifatnya reuseable (*data type and key declaration)\n// tidak terikat scope\nschool = \"Universitas Purwadhika\"\n\n// declare variable with var key\nvar hobby\nconsole.log(hobby)\nhobby = \"Coding\"\n\nconsole.log(school)\nconsole.log(hobby)\n\n// declare variable with let key\n// tidak bisa buat variable dengan nama yang sama lebih dari 1x\n// block scope\nlet age = 25\nage = 18\nconsole.log(\"usia : \", age)\n\n// declare variable with const key\n// tidak bisa buat variable dengan nama yang sama lebih dari 1x\n// block scope\n// tidak bisa diubah nilainya\nconst address = 1\naddress = 2\nconsole.log(\"alamat : \", address) // TypeError: Assignment to constant variable.\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "undefined",
+                                "Universitas Purwadhika",
+                                "Coding",
+                                "usia :  18",
+                                "alamat :  2",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// varible scope {}\n// global dan local\n// global ketika kita declare variable di luar scope\n// local ketika kita declare variable di dalam scope\n\nvar hello1 = \"Hello World\" // always scope global, karena di declarare pakai key var\nconsole.log(hello1)\n{\n    var hello2 = \"Hello World 2\" // scope local\n    console.log(hello2)\n}\nconsole.log(hello2)\n\n\nlet hobby = \"Coding\" // scope global\nlet handphone1 = \"Samsung\" // scope global\n{\n    let hobby = \"Gaming\" // scope local\n    console.log(hobby)\n    let handphone2 = \"Iphone\" // scope local\n}\nconsole.log(hobby)\nconsole.log(handphone2) // ERROR\nhandphone2 = \"android\" // ERROR"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Hello World",
+                                "Hello World 2",
+                                "Hello World 2",
+                                "Gaming",
+                                "Coding",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "ReferenceError",
+                                "message": "handphone2 is not defined",
+                                "stack": "    at <Cell 8> [23, 7]\n    at <Cell 8> [19, 46]\n    at Script.runInContext (node:vm:141:12)\n    at Script.runInNewContext (node:vm:146:17)\n    at Object.runInNewContext (node:vm:306:38)\n    at C (/Users/user/.vscode/extensions/donjayamanne.typescript-notebook-2.0.6/out/extension/server/index.js:2:113345)\n    at t.execCode (/Users/user/.vscode/extensions/donjayamanne.typescript-notebook-2.0.6/out/extension/server/index.js:2:114312)\n    at k.<anonymous> (/Users/user/.vscode/extensions/donjayamanne.typescript-notebook-2.0.6/out/extension/server/index.js:2:142156)\n    at k.emit (node:events:513:28)\n    at k.emit (node:domain:489:12)"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let greeting = \"Hello World\"\n{\n    greeting = \"Hello Friends\" \n    console.log(\"local : \", greeting)\n}\nconsole.log(\"global : \", greeting)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "local :  Hello Friends",
+                                "global :  Hello Friends",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// valid\nconst fullname = \"Aliya\"\nconst fullname01 = \"edo\"\nconst fullname_01 = \"edo\"\nconst fullname$ = \"edo\"\nconst $fullname = \"hello\"\n\n// not valid\nconst full name = \"hello\"\nconst full.name = \"hello\"\nconst full-name = \"hello\"\nconst 01fullname = \"hello\"\n\n// use pre-define or built-in global variable name\nlet Objects = \"hello\"\nlet name = \"ale\"\nlet Array\n\n// naming constant variable\nconst PI = 3.14\nconst BMI = 23\nconst FULLNAME = \"Aliya\""
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "Error",
+                                "message": "Failed to generate code object, \nconst full;\n          ^\n\nUnexpected token 'n'",
+                                "stack": ""
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Data Types\nprimitive and reference (non-primitive) data types\n\nprimitive (String, Number, & Boolean, undefined, null)\nreference types (Object, Array, Set, Map, etc)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// String\n// String is a sequence of characters, used to represent text, wrapped in single or double quotes.\n\nvar fullname = \"Aliya\";\nvar fullname = 'Aliya';\nvar age = \"25\";\n\n// String Concatenation\n// The process of appending one string to the end of another string is called concatenation.\nlet name = \"Ali\";\nlet greeting = \"Hello\";\nlet school = \"Purwadhika\";\nconsole.log(\"Hello, My Name is \" + name + \", welcome to \" + school);\nconsole.log(`${greeting}, My Name is ${name}, welcome to ${school}`);\n\n// Build-in Method & Properties (length)\nconsole.log('chars', name.length);\n\nconsole.log('uppercase name', name.toUpperCase());\nconsole.log('lowercase name', name.toLowerCase());\nconsole.log('index of a', name.indexOf('a'));\nconsole.log('index of A', name.indexOf('A'));\nconsole.log('replace l with p', name.replace('l', 'p'));\nconsole.log('substring', name.substring(0, 2));\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Hello, My Name is Ali, welcome to Purwadhika",
+                                "Hello, My Name is Ali, welcome to Purwadhika",
+                                "chars 3",
+                                "uppercase name ALI",
+                                "lowercase name ali",
+                                "index of a -1",
+                                "index of A 0",
+                                "replace l with p Api",
+                                "substring Al",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Number\n// Number is a numeric data type in JavaScript which represents both integer and floating point numbers.\n// turunan data types : NaN, Infinity, -Infinity\nlet a = 1;\nlet b = 1.0;\nlet c = 1.5;\nlet d = NaN; // NaN = Not a Number\nlet e = Infinity;\n\nconsole.log('a', parseFloat(a))\nconsole.log('b', a.toString()) // convert to string, \"1\"\nconsole.log('c fixed', c.toFixed())"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "a 1",
+                                "b 1",
+                                "c fixed 2",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Boolean\n// Boolean is a data type that has only two possible values: true or false.\nlet isCoding = true;\nlet isFun = false;"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// undefined and null\n// undefined is a variable that has not been assigned a value.\nlet hello\nconsole.log(hello)\n\nlet unknown = null\nconsole.log(unknown)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "undefined",
+                                "null",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Convert\n// String or Boolean to Number\nlet age = \"25\"\nlet age2 = parseInt(age) // 25\nlet age3 = Number(age) // 25\n\nlet random = \"25a\"\nlet randomToNumber = Number(random) // NaN\nconsole.log(randomToNumber)\n\n// boolean (true or false) to number (1 or 0)\nlet isCoding = true\nlet isCodingToNumber = Number(isCoding) // 1\n\n// Number or Boolean to String\nlet birthdateYear = 1995\nlet birthdateYearToString = birthdateYear.toString() // \"1995\"\nlet birthdateYearToStringv2 = `${birthdateYear}` // \"1995\"\nlet isFun = true\nlet isFunToString = isFun.toString() // \"true\"\n\n// String, Number to Boolean\n// true\nlet trueString = \"hello\" // true\nlet spaceString = \" \" // true\nlet trueNumber = 1\nlet trueNumber2 = -1\nlet trueNumber3 = 0.1\nlet emptyObject = {}\nlet emptyArray = []\n\n// false\nlet emptyString = \"\"\nlet falseNumber = 0\nlet notNumber = NaN\n// undefined, null, NaN, 0, \"\" (empty string) is false\n\n\nconsole.log(trueString, Boolean(trueString))\nconsole.log(emptyString, Boolean(emptyString))\nconsole.log(notNumber, Boolean(notNumber))\nconsole.log(trueNumber3, Boolean(trueNumber3))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "NaN",
+                                "hello true",
+                                " false",
+                                "NaN false",
+                                "0.1 true",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
