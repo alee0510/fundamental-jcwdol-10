@@ -3,7 +3,7 @@
         {
             "language": "markdown",
             "source": [
-                "Hello World"
+                "## Hello World"
             ],
             "outputs": []
         },
@@ -29,14 +29,14 @@
         {
             "language": "markdown",
             "source": [
-                "Code Structure\n- statement -> single and multiple, instruction atau perintah yang kita berikan atau kita tulis dalam bentuk code\n- semicolomn ;, optional jika kita tulis staement dalam line yang berbeda\n- comment"
+                "## Code Structure\n- Statement\n    - single and multiple, instruction atau perintah yang kita berikan atau kita tulis dalam bentuk code\n- Semicolomn (;) \n    - optional jika kita tulis staement dalam line yang berbeda\n- Comment"
             ],
             "outputs": []
         },
         {
             "language": "javascript",
             "source": [
-                "console.log(\"My Name is Aliya.\");\nconsole.log(\"I love Flutter.\");\n\n// multi-single statement in oneline\nconsole.log(\"I studied at Purwadhika\"); console.log(\"I am a student\");\n\nconsole.log(\"I love a dog\") \nconsole.log(\"I love a cat\")\n\n// ini comment\n/* \nmulti line comment\nlalala\n*/"
+                "console.log(\"My Name is Aliya.\"); // 1st statement\nconsole.log(\"I love Flutter.\"); // 2nd statement\n\n// multi-single statement in oneline\nconsole.log(\"I studied at Purwadhika\"); console.log(\"I am a student\");\n\n// multi-single statement in multiline withouth semicolon\nconsole.log(\"I love a dog\") \nconsole.log(\"I love a cat\")\n\n// ini comment\n/* \nmultiline comment\nanother comment\nand more comment\n*/"
             ],
             "outputs": [
                 {
@@ -44,8 +44,8 @@
                         {
                             "mime": "application/vnd.code.notebook.stdout",
                             "value": [
-                                "My Name is Ale.",
-                                "I love JavaScript.",
+                                "My Name is Aliya.",
+                                "I love Flutter.",
                                 "I studied at Purwadhika",
                                 "I am a student",
                                 "I love a dog",
@@ -60,7 +60,7 @@
         {
             "language": "markdown",
             "source": [
-                "Variable\nwadah untuk menyimpan sebuah data yang nantinya akan kita pakai dalam menjalankan sebuah program, declaration : var, let, const, punya scoping"
+                "## Variable\n*definisi : variable merupakan wadah atau tempat untuk menyimpan sebuah data yang nantinya akan kita pakai dalam menjalankan sebuah program* \n\n3 keys of variable declaration : var, let, & const\nfor both let and const has a scoping concern"
             ],
             "outputs": []
         },
