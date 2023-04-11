@@ -29,7 +29,7 @@
         {
             "language": "markdown",
             "source": [
-                "## Code Structure\n- Statement\n    - single and multiple, instruction atau perintah yang kita berikan atau kita tulis dalam bentuk code\n- Semicolomn (;) \n    - optional jika kita tulis staement dalam line yang berbeda\n- Comment"
+                "## JS Code Structure\n1. Statement\n    - can be declare in single and multiple line\n    - statement is an instruction atau task that we write in the form of code\n2. Semicolomn (;) \n    - it used to define the end of statement\n    - multiple statement can be write in oneline with each semicolomn define the end of each statement\n    - its can be optional if we declare our statement in multiple line, by default javascript will read our statement line by line\n3. Comment\n    - it used for doumentation purpose\n    - its not part of our code"
             ],
             "outputs": []
         },
@@ -65,9 +65,16 @@
             "outputs": []
         },
         {
+            "language": "markdown",
+            "source": [
+                "1. Simple Varible Declaration & Value Assignment"
+            ],
+            "outputs": []
+        },
+        {
             "language": "javascript",
             "source": [
-                "var fullname = \"Aliya\"\nvar programingLangguage = \"Dart\"\n\nconsole.log(fullname)\nconsole.log(programingLangguage)"
+                "var fullname // variable declaration\nfullname = \"Aliya\" // variable assignment value\nvar programingLangguage = \"Dart\" // inline delcaration and assignment value\n\nconsole.log(fullname)\nconsole.log(programingLangguage)"
             ],
             "outputs": [
                 {
