@@ -38,24 +38,7 @@
             "source": [
                 "console.log(\"My Name is Aliya.\"); // 1st statement\nconsole.log(\"I love Flutter.\"); // 2nd statement\n\n// multi-single statement in oneline\nconsole.log(\"I studied at Purwadhika\"); console.log(\"I am a student\");\n\n// multi-single statement in multiline withouth semicolon\nconsole.log(\"I love a dog\") \nconsole.log(\"I love a cat\")\n\n// ini comment\n/* \nmultiline comment\nanother comment\nand more comment\n*/"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "My Name is Aliya.",
-                                "I love Flutter.",
-                                "I studied at Purwadhika",
-                                "I am a student",
-                                "I love a dog",
-                                "I love a cat",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",

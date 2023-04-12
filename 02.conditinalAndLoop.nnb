@@ -1,55 +1,18 @@
 {
     "cells": [
         {
-            "language": "markdown",
+            "language": "typescript",
             "source": [
-                "## Conditional Statement\ndipakai ketika kita ingin menjalankan sebuah program dengan kondisi yang berbeda"
+                "let age = 21\n\n// conditional statement\n// if condition is true, then execute the code block {}\n// if condition is false, then skip the code block {}\nif (age >= 17) {\n    console.log('You can vote')\n    console.log(\"not restricted\")\n}\n\nconsole.log(\"restricted to vote\")"
             ],
             "outputs": []
         },
         {
             "language": "typescript",
             "source": [
-                "let age = 21\n\n// conditional statement\n// if condition is true, then execute the code block {}\n// if condition is false, then skip the code block {}\nif (age >= 17) {\n    console.log('You can vote')\n    console.log(\"not restricted\")\n}\n\nconsole.log(\"restricted to vote\")"
-            ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "You can vote",
-                                "not restricted",
-                                "restricted to vote",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "language": "typescript",
-            "source": [
                 "// multiple conditional statement\nlet nilai = 65\n\nif (nilai >= 80) {\n    console.log(\"Grade A\")\n}\nif (nilai < 80) {\n    console.log(\"Grade B\")\n}\n\nconsole.log(\"End Program\")\n\n// if-else statement to create a 2 conditional statement\nif (nilai >= 80) {\n    console.log(\"Grade A\")\n} else {\n    console.log(\"Grade B\")\n}\nconsole.log(\"End Program\")\n\n// if-else-if statement to create a multiple, more than 2 conditional statement\nlet Grade = \"J\"\n\nif (Grade == \"A\") { \n    console.log(\"Excellent\")\n} else if (Grade == \"B\") { \n    console.log(\"Good\")\n} else if (Grade == \"C\") { \n    console.log(\"Not Bad\")\n} else if (Grade == \"D\") { \n    console.log(\"Bad\")\n} else { \n    console.log(\"Fail\")\n}\n"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "Grade B",
-                                "End Program",
-                                "Grade B",
-                                "End Program",
-                                "Fail",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -68,7 +31,21 @@
         {
             "language": "markdown",
             "source": [
-                "## Example Case for && or || operator\nrangking system with condition\n> category rangking or grade\n- 80 - 100 -> Grade A -> Execelent\n- 70 - 80 -> Grade B -> Good Job\n- 60 - 70 -> Grade C -> Not bad\n- 50 - 60 -> Grade D -> Bad\n- <= 50 -> Grade E -> Failed"
+                "## Conditional Statement\ndipakai ketika kita ingin menjalankan sebuah program dengan kondisi yang berbeda"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// multiple conditional statement\nlet nilai = 65\n\nif (nilai >= 80) {\n    console.log(\"Grade A\")\n}\nif (nilai < 80) {\n    console.log(\"Grade B\")\n}\n\nconsole.log(\"End Program\")\n\n// if-else statement to create a 2 conditional statement\nif (nilai >= 80) {\n    console.log(\"Grade A\")\n} else {\n    console.log(\"Grade B\")\n}\nconsole.log(\"End Program\")\n\n// if-else-if statement to create a multiple, more than 2 conditional statement\nlet Grade = \"J\"\n\nif (Grade == \"A\") { \n    console.log(\"Excellent\")\n} else if (Grade == \"B\") { \n    console.log(\"Good\")\n} else if (Grade == \"C\") { \n    console.log(\"Not Bad\")\n} else if (Grade == \"D\") { \n    console.log(\"Bad\")\n} else { \n    console.log(\"Fail\")\n}\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// and && operator\n// if both condition is true, then execute the code block {}\n// if one of the condition is false, then skip the code block {}\n\n8 > 6 && 5 > 3 // true && true => true\n8 > 6 && 5 < 3 // true && false => false\n8 < 6 && 5 > 3 // false && true => false\n8 < 6 && 5 < 3 // false && false => false\n\n// or || operator\n// if one of the condition is true, then execute the code block {}\n// if both condition is false, then skip the code block {}\n\n8 > 6 || 5 > 3 // true || true => true\n8 > 6 || 5 < 3 // true || false => true\n8 < 6 || 5 > 3 // false || true => true\n8 < 6 || 5 < 3 // false || false => false\n\n// not ! operator\n// if condition true, result is false\n!true // false\n!false // true\n!(8 > 6) // false\n!(8 < 6) // true\n!(8 > 6 && 5 > 3) // true && true => !true => false\n!8 // !8 => !true => false\n!0 // !0 => !false => true\n\n// more than 2 falshy or truthy value with && operator\n1 > 2 && 2 > 3 && 3 > 4 // false && false && false => false\n1 > 2 && 2 > 3 && 3 < 4 // false && false && true => false\n1 > 2 && 2 < 3 && 3 > 4 // false && true && false => false\n1 < 2 && 2 < 3 && 3 < 4 // true && true && true => true\n\n// more than 2 falshy or truthy value with || operator\n1 > 2 || 2 > 3 || 3 > 4 // false || false || false => false\n1 > 2 || 2 > 3 || 3 < 4 // false || false || true => true\n1 > 2 || 2 < 3 || 3 > 4 // false || true || false => true\n\n// mix && and || operator\n1 > 2 || 2 > 3 && 3 > 4 // false || false && false => false || false => false\n1 > 2 || 2 > 3 && 3 < 4 // false || false && true => false || true => true"
             ],
             "outputs": []
         },
@@ -90,13 +67,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "language": "markdown",
-            "source": [
-                "## 2nd form of conditional statement\n- Swicth and Case"
-            ],
-            "outputs": []
         },
         {
             "language": "typescript",
