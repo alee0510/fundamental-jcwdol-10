@@ -1,0 +1,309 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Array []\n> definition : dengan adanya array, kita dapat menyimpan multiple data element dengan multiple data types dalam satu wadah \"variable\"\n\n- term : index -> indicator lokasi suatu data element dialam sebuah array, index selalu dimulai dari 0\n- declaration ?\n    - literal -> bikin variable dengan array kosong \"`[]`\" secara langsung\n    - array construction -> bikin sebuah array menggunkan basic build-in array constructor -> new Array()"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// exmple\n// 1. declaration and assignment values of array\nconst students = [\"John\", \"Peter\", \"Mary\", \"Jane\", \"Mark\"];\n\n// 2. access the value of array -> index\nconsole.log(students[0]); // John\nconsole.log(students[1]); // Peter\nconsole.log(students[2]); // Mary\nconsole.log(students[3]); // Jane\nconsole.log(students[4]); // Mark\nconsole.log(students[5]); // undefined\n\n// 3. change the value of array -> mutable\nstudents[0] = \"John Smith\";\nconsole.log(students[0]); // John Smith\n\n// 4. add the value of array -> mutable -> index literal, push(), unshift()\nstudents[5] = \"John Doe\";\n// console.log(students)\nstudents[10] = \"Jemmy\";\n// console.log(students)\nconsole.log(students[7])\n\n// build-in method to add new data element inside an array\nstudents.push(\"Jisoo\"); // add new data element at the end of the array\nstudents.push(\"Lisa\"); // add new data element at the end of the array\n// console.log(students)\n\nstudents.unshift(\"Rose\"); // add new data element at the beginning of the array\n// console.log(students)\n\n// 5. delete the value of array -> mutable -> delete\ndelete students[1];\nconsole.log(students)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "John",
+                                "Peter",
+                                "Mary",
+                                "Jane",
+                                "Mark",
+                                "undefined",
+                                "John Smith",
+                                "undefined",
+                                "[",
+                                "  'Rose',     <1 empty item>,",
+                                "  'Peter',    'Mary',",
+                                "  'Jane',     'Mark',",
+                                "  'John Doe', <4 empty items>,",
+                                "  'Jemmy',    'Jisoo',",
+                                "  'Lisa'",
+                                "]",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// array literal vs array constructor\nlet games = [];\nconsole.log(games)\ngames[0] = \"PUBG\";\ngames[1] = \"COD\";\ngames[2] = \"GTA\";\ngames[3] = \"FIFA\";\n\nlet programmingLanguages = new Array(7).fill(\"JavaScript\");\nconsole.log(programmingLanguages) "
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[]",
+                                "[",
+                                "  'JavaScript',",
+                                "  'JavaScript',",
+                                "  'JavaScript',",
+                                "  'JavaScript',",
+                                "  'JavaScript',",
+                                "  'JavaScript',",
+                                "  'JavaScript'",
+                                "]",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// array build-in method & properties\nlet fruits = [\"Apple\", \"Banana\", \"Orange\", \"Mango\", \"Pineapple\", \"Watermelon\"];\nconsole.log(fruits)\n\n// 1. length -> mutable\nconsole.log(fruits.length) // 6\n\n// fruits[10] = \"Papaya\";\n// console.log(fruits.length) // 11\n\n// fruits.length = 0\n// console.log(fruits.length) // 0\n// console.log(fruits) // []\n\n// 2. methods\nfruits.push(\"Papaya\"); // add new data element at the end of the array\nfruits.pop() // remove the last data element of the array\nfruits.unshift(\"Grape\"); // add new data element at the beginning of the array\nfruits.shift() // remove the first data element of the array\nlet slicedFruites = fruits.slice(1, 3) // return a new array from the index 1 to 3\n// fruits.splice(1, 2) // remove the data element from the index 1, with total 2 elements\nfruits.splice(1, 2, \"Papaya\", \"Strawberry\") // remove the data element from the index 1, with total 2 elements, and add new data element at the index 1\nconsole.log(fruits)\nconsole.log(slicedFruites)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Apple', 'Banana', 'Orange', 'Mango', 'Pineapple', 'Watermelon' ]",
+                                "6",
+                                "[ 'Apple', 'Papaya', 'Mango', 'Pineapple', 'Watermelon' ]",
+                                "[ 'Banana', 'Orange' ]",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Iteration in Array\nlooping setiap element yang ada di dalam Array"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\n// console.log(numbers[0])\n// console.log(numbers[1])\n// console.log(numbers[2])\n// console.log(numbers[3])\n//...\n\n// manual iteration\nfor(let index = 0; index < numbers.length; index++){\n    console.log(numbers[index])\n}\n\n// shorcut iteration\n// loop element of array wihtout knowing its index\nfor (let number of numbers) {\n    console.log(\"number\", number)\n}\n\n// build-in method for iteration\n// .forEach()\nnumbers.forEach(function(number, index) {\n    console.log(number, index)\n})\n// for(let index = 0; index < numbers.length; index++){\n//     callback(numbers[index], index)\n// }\n\n// .map() -> return a new array with the same length of the original array -> immutable\nlet newNumbers = numbers.map(function(number, index) {\n    return number * 2\n})\nconsole.log(newNumbers)\n\n// .filter() -> return a new array with the different length of the original array\nlet filteredNumbers = numbers.filter(function(number, index) {\n    return number % 2 !== 0\n})\nconsole.log(filteredNumbers)\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1",
+                                "2",
+                                "3",
+                                "4",
+                                "5",
+                                "6",
+                                "7",
+                                "8",
+                                "9",
+                                "10",
+                                "number 1",
+                                "number 2",
+                                "number 3",
+                                "number 4",
+                                "number 5",
+                                "number 6",
+                                "number 7",
+                                "number 8",
+                                "number 9",
+                                "number 10",
+                                "1 0",
+                                "2 1",
+                                "3 2",
+                                "4 3",
+                                "5 4",
+                                "6 5",
+                                "7 6",
+                                "8 7",
+                                "9 8",
+                                "10 9",
+                                "[",
+                                "   2,  4,  6,  8, 10,",
+                                "  12, 14, 16, 18, 20",
+                                "]",
+                                "[ 1, 3, 5, 7, 9 ]",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Function\n> definition : reusable block code that contain our custom logic or step instruction / statement to solve a certain problem or do certain task\n\n- how to declare ?\n    - literal -> key function\n    - functional expression"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// declare a function\n// problem : multiply 2 numbers\n// solution without function\nlet numb1 = 3\nlet numb2 = 5\nconsole.log(numb1 * numb2)\n\n// solution with function\nfunction multiplyTwoNumbers (number1, number2) {\n    console.log(\"result : \", number1 * number2)\n}\n\n// calling function\nmultiplyTwoNumbers(3, 5)\nmultiplyTwoNumbers(4, 6)\nmultiplyTwoNumbers(7, 8)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "15",
+                                "result :  15",
+                                "result :  24",
+                                "result :  56",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// functional expression\n// function yang disimpan dalam variable\nlet multiplyTwoNumbers = function (number1, number2) {\n    console.log(\"result : \", number1 * number2)\n}\nmultiplyTwoNumbers(3, 5)\nmultiplyTwoNumbers(4, 6)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "result :  15",
+                                "result :  24",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// literal function declartion vs function expression\naddTwoNumberLiterral(5, 5) // valid\n\nfunction addTwoNumberLiterral (number1, number2) {\n    console.log(\"result : \", number1 + number2)\n}\naddTwoNumberLiterral(3, 5)\n\n// addTwoNumberExpression(5, 5) // invalid -> ReferenceError: Cannot access 'addTwoNumberExpression' \nlet addTwoNumberExpression = function (number1, number2) {\n    console.log(\"result : \", number1 + number2)\n}\naddTwoNumberExpression(3, 5)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "result :  10",
+                                "result :  8",
+                                "result :  10",
+                                "result :  8",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// return -> mengembalikan nilai dari sebuah function atau membuat function menghasilkan suatu value\nfunction divideTwoNumber (number1, number2) {\n    const result = number1 / number2 // local variable\n    console.log(\"result : \", result)\n    return [result]\n}\nconsole.log(result) // ReferenceError: result is not defined\n\ndivideTwoNumber(10, 2)\nlet divideResult = divideTwoNumber(15, 5)\nconsole.log(divideResult)\n\n// return is used to indictae the end of the function, \n// the value of return can be anything (String, Number, Boolean, Object, Array, or Function itself)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "3",
+                                "result :  5",
+                                "result :  3",
+                                "3",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// function that return a function\nfunction multiplyTwoNumber (number1, number2) {\n    const result = number1 * number2\n\n    return function () { // function as a return value\n        console.log(\"result : \", result)\n    }\n}\n\nlet multiplyResult = multiplyTwoNumber(3, 5)\nmultiplyResult()\nconsole.log(multiplyResult)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "result :  15",
+                                "[Function (anonymous)]",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// function parameter\n// 1. default parameter\nfunction addTwoNumber (number1 = 0, number2 = 0) {\n    return number1 + number2\n}\n\nlet resultOfAddTwoNumber = addTwoNumber() // function will used it own default parameter\nlet secondResultOfAddTwoNumber = addTwoNumber(3, 5) // function will used the parameter that we passed\nconsole.log(resultOfAddTwoNumber)\nconsole.log(secondResultOfAddTwoNumber)\n\n// 2. ...rest parameter -> array\n// rest parameter must be the last parameter\nfunction addAllNumber (init = 0, ...numbers) {\n    console.log(\"rest parameter of numbers : \", numbers)\n    let result = init\n    for (let number of numbers) {\n        result += number\n    }\n    return result\n}\n\nlet resultOfAddAllNumber = addAllNumber(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)\nlet secondResultOfAddAllNumber = addAllNumber()\nconsole.log(resultOfAddAllNumber)\nconsole.log(secondResultOfAddAllNumber)\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "0",
+                                "8",
+                                "rest parameter of numbers :  [",
+                                "  2, 3, 4,  5, 6,",
+                                "  7, 8, 9, 10",
+                                "]",
+                                "rest parameter of numbers :  []",
+                                "55",
+                                "0",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Arrow function\n> shortcut untuk membuat sebuah function"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// function expression\nlet isEvenNumber = function (number) {\n    return number % 2 === 0\n}\n\n// arrow function -> anoymous function\nlet isEvenNumberWithArrowFunction = (number) => {\n    return number % 2 === 0\n}\n\n// arrow function with implicit return\nlet isEvenNumberWithArrowFunctionImplicitReturn = (number) => number % 2 === 0"
+            ],
+            "outputs": []
+        }
+    ]
+}
