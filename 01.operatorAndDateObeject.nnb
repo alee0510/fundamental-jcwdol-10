@@ -19,38 +19,7 @@
             "source": [
                 "// + (penjumlahan) -> untuk menambahkan dua nilai\n// Data Type Number\nlet numb1 = 10\nlet numb2 = 15\nlet result1 = numb1 + numb2\n\nconsole.log(\"result\", result1)\n\n// operasi + untuk data type berbeda\nlet numb3 = 5\nlet numb4 = \"5\" // angka benar, valid string number\nconsole.log(\"result 2 : \", numb3 + numb4)\n// NOTE : jika data type berbeda, maka akan diubah menjadi string, karena string lebih dominan\n\nlet isNumber = false // boolean\nlet isString = \"false\" // string\nconsole.log(\"result 3 : \", isNumber + isString)\n\nlet isNotNumber = true // boolean\nlet validNumber = 15 // number\nlet result4 = isNotNumber + validNumber\nconsole.log(\"result 4 : \", result4)\n\nconsole.log(\"result 5 : \", true + false) // 105\n// NOTE : ketika kita melakukan operasi math +, maka semua data types akan diubah menjadi number kecuali string,\n// selain operasi +, makan semua data type otomatis akan di convert jadi number\n\n// - (pengurangan)\nconsole.log(\"result 6 : \", 10 - 5) // 5\nconsole.log(\"result 6.1 : \", 10 - \"5\") // 5\n\n// * (perkalian)\nconsole.log(\"result 7 : \", 10 * 5) // 50\nconsole.log(\"result 7.1 : \", 10 * \"5\") // 50\nconsole.log(\"result 7.2 : \", 10 * true) // 10\n\n// / (pembagian)\nconsole.log(\"result 8 : \", 10 / 5) // 2\nconsole.log(\"result 8.1 : \", 10 / \"5\") // 2\nconsole.log(\"result 8.2 : \", 10 / true) // 10\n\n// % (modulus)\nconsole.log(\"result 9 : \", 10 % 4) // 2\nconsole.log(\"result 9.1 : \", 10 % \"4\") // 2\nconsole.log(\"result 9.2 : \", 10 % true) // 0\n\n// ++ (increment)\nlet numb5 = 10 \nnumb5++ // numb5 = numb5 + 1\nnumb5++ // numb5 = numb5 + 1\nconsole.log(\"result 10 : \", numb5) // 12\n\n// -- (decrement)\nlet numb6 = 10\nnumb6-- // numb6 = numb6 - 1    \nnumb6-- // numb6 = numb6 - 1\nconsole.log(\"result 11 : \", numb6) // 8\n\n// NOTE : increment dan decrement hanya bisa digunakan untuk data type number\nlet numb7 = \"10\"\nnumb7++ // numb7 = numb7 + 1\nconsole.log(\"result 12 : \", numb7) // 101\nnumb7--\nconsole.log(\"result 13 : \", numb7) // 100\n\n// schortcut math operator\n// += (penjumlahan)\nlet numb8 = 10\nnumb8 += 5 // numb8 = numb8 + 5\nconsole.log(\"result 14 : \", numb8) // 15\n\n// -= (pengurangan)\n// *= (perkalian)\n// /= (pembagian)\n// %= (modulus)\n// *= (multiply)"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "result 25",
-                                "result 2 :  55",
-                                "result 3 :  falsefalse",
-                                "result 4 :  16",
-                                "result 5 :  1",
-                                "result 6 :  5",
-                                "result 6.1 :  5",
-                                "result 7 :  50",
-                                "result 7.1 :  50",
-                                "result 7.2 :  10",
-                                "result 8 :  2",
-                                "result 8.1 :  2",
-                                "result 8.2 :  10",
-                                "result 9 :  2",
-                                "result 9.1 :  2",
-                                "result 9.2 :  0",
-                                "result 10 :  12",
-                                "result 11 :  8",
-                                "result 12 :  11",
-                                "result 13 :  10",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -64,26 +33,7 @@
             "source": [
                 "// equality comparison (==, ===, !=, !==)\n// == (equal) -> compared value must be same\nconsole.log(\"result 15 : \", 10 == 10) // true\nconsole.log(\"result 15.1 : \", 10 == \"10\") // true\nconsole.log(\"result 15.2 : \", 10 == true) // 10 == 1 ->  false\n\n\n// === (strict equal) -> concern di data types -> value dan data types harus sama\nconsole.log(\"result 16 : \", 10 === 10) // true \nconsole.log(\"result 16.1 : \", 10 === \"10\") // false\nconsole.log(\"result 16.2 : \", 10 === true) // false\nconsole.log(\"result 16.3 : \", \"10\" === \"10\") // true\nconsole.log(\"result 16.4 : \", \"true\" === 1) // false\nconsole.log(\"result 16.5 : \", \"true\" === true) // false\n\n// != (not equal)\n// !== (strict not equal)\n\n// >= (greater than or equal) vs > (greater than)\nconsole.log(\"result 17 : \", 10 >= 10) // true\nconsole.log(\"result 17.1 : \", 10 > 10) // false"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "result 15 :  true",
-                                "result 15.1 :  true",
-                                "result 15.2 :  false",
-                                "result 16 :  true",
-                                "result 16.1 :  false",
-                                "result 16.2 :  false",
-                                "result 16.3 :  true",
-                                "result 16.4 :  false",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         }
     ]
 }
