@@ -12,49 +12,14 @@
             "source": [
                 "// literal\nconst Car = {\n    model : \"Hyundai\",\n    roda : 4,\n    color : \"Merah\",\n}\n\n// access properties -> dot notation\nconsole.log(Car.model);\nconsole.log(Car.roda);\nconsole.log(Car.color);\n\n// constructor -> new\nconst Handphone = new Object()\nconsole.log(Handphone);\n\n// assign properties\nHandphone.merk = \"Samsung\";\nHandphone.warna = \"Hitam\";\nHandphone.harga = 2000;\nHandphone.model = \"S23+\"\nconsole.log(Handphone);\n\n// array vs object\nconst handphone = [\"Samsung\", \"Hitam\", 2000, \"S23+\"]\nconsole.log(handphone[0]);\n\n// delete properties\ndelete Handphone.model;\ndelete Handphone[\"warna\"];\n\n// access properties -> quotes notation\nconsole.log(Handphone[\"merk\"]);\n\n// object with JSON format\nconst Person = {\n    \"name\" : \"John\",\n    \"age\" : 20,\n    \"single\" : true,\n}\nPerson[\"address\"] = \"Jakarta\";\n"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "Hyundai",
-                                "4",
-                                "Merah",
-                                "{}",
-                                "{ merk: 'Samsung', warna: 'Hitam', harga: 2000, model: 'S23+' }",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "javascript",
             "source": [
                 "// method -> function inside object the describe behavior of object\nconst Person = {\n    name : \"John\",\n    age : 20,\n    single : true,\n    sayHello : function () {\n        console.log(\"Hello World\");\n    }\n}\nPerson.sayHello();\n\nPerson.running = function () {\n    console.log(\"I'm running\");\n}\nPerson.name = \"Doe\";\n\nconsole.log(Person);"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "Hello World",
-                                "{",
-                                "  name: 'Doe',",
-                                "  age: 20,",
-                                "  single: true,",
-                                "  sayHello: [Function: sayHello],",
-                                "  running: [Function (anonymous)]",
-                                "}",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -82,22 +47,7 @@
             "source": [
                 "class Person {\n    constructor(_name, _birthdate, _single) {\n        this.name = _name;\n        this.birthdate =_birthdate;\n        this.single = _single;\n    }\n\n    // method\n    getAgeInYear () {\n        return new Date().getFullYear() - new Date(this.birthdate).getFullYear()\n    }\n}\n\nconst presiden = new Person(\"Jokowi\", \"5/3/1987\", false);\nconst mentri = new Person(\"Prabowo\", \"5/3/1986\", false);\nconsole.log(presiden);\nconsole.log(mentri);\nconsole.log(presiden.getAgeInYear());"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "Person { name: 'Jokowi', birthdate: '5/3/1987', single: false }",
-                                "Person { name: 'Prabowo', birthdate: '5/3/1986', single: false }",
-                                "36",
-                                "5/3/2023, 8:36:15 PM",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -111,88 +61,21 @@
             "source": [
                 "// super-class or parent-class\nclass Animal {\n    #gender // privare props\n    constructor(_name, _age, _gender) {\n        this.name = _name;\n        this.age = _age;\n        this.#gender = _gender\n    }\n\n    eat () {\n        console.log(`${this.name} is eating`);\n    }\n\n    #sleep () {\n        console.log(`${this.name} is sleeping`);\n    }\n}\n\nconst Tiger = new Animal(\"Tiger\", 2, \"male\");\nconsole.log(Tiger);\nconsole.log(Tiger.gender)\n// Tiger.sleep()\n// Tiger.eat()\n\n// inheritance\n// sub-class or child-class\nclass Mamalia extends Animal {\n    breed = \"vivipar\"\n    environtment = \"land\"\n\n    static eat() {\n        console.log(`${this.name} is eating vegetables`);\n    }\n}\n\nMamalia.eat()\n\nconst Goat = new Mamalia(\"Kambing\", 10, \"female\")\nconsole.log(Goat);\nGoat.eat()\n"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "Animal { name: 'Tiger', age: 2 }",
-                                "undefined",
-                                "Mamalia is eating vegetables",
-                                "Mamalia {",
-                                "  name: 'Kambing',",
-                                "  age: 10,",
-                                "  breed: 'vivipar',",
-                                "  environtment: 'land'",
-                                "}",
-                                "Kambing is eating",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "javascript",
             "source": [
                 "// Functional Contructor\nfunction Animal (_name, _age, _gender) {\n    this.name = _name\n    this.age = _age\n    this.gender = _gender\n}\n\nconst Lion = new Animal(\"Lion\", 5, \"female\")\n\n// assign method to a class or functional consturctor\nAnimal.prototype.eat = function () {\n    console.log(`${this.name} is eating`);\n}\n\nconsole.log(Lion);\nLion.eat()"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "Animal { name: 'Lion', age: 5, gender: 'female' }",
-                                "Lion is eating",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "javascript",
             "source": [
                 "// Object Desrtuctering & Spread operator\nconst Student1 = { \n    name : \"John\",\n    age : 20,\n    single : true,\n    address : {\n        street : \"Jl. Jendral Sudirman\",\n        city : \"Jakarta\",\n        country : \"Indonesia\",\n        no : 123,\n    }\n}\n\n// const name = Student.name\n// const age = Student.age\n// const single = Student.single\n\nconst { name , age, single } = Student1\n// console.log(name, age, single);\n\n// reference (shallow) copy\nconst Student2 = { ...Student1 }\nStudent2.name = \"Doe\"\nStudent2.age = 25\nStudent2.address.street = \"Jl. Dipatiukur\"\n\n// full copy\nconst Student3 = JSON.parse(JSON.stringify(Student1))\nStudent3.name = \"Doe\"\nStudent3.age = 25\nStudent3.address.street = \"Jl. Senopati\"\n// console.log(\"student 2\", Student2);\nconsole.log(\"student 1\", Student1)\nconsole.log(\"student 3\", Student3);"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "student {",
-                                "  name: 'John',",
-                                "  age: 20,",
-                                "  single: true,",
-                                "  address: {",
-                                "    street: 'Jl. Dipatiukur',",
-                                "    city: 'Jakarta',",
-                                "    country: 'Indonesia',",
-                                "    no: 123",
-                                "  }",
-                                "}",
-                                "student 3 {",
-                                "  name: 'Doe',",
-                                "  age: 25,",
-                                "  single: true,",
-                                "  address: {",
-                                "    street: 'Jl. Senopati',",
-                                "    city: 'Jakarta',",
-                                "    country: 'Indonesia',",
-                                "    no: 123",
-                                "  }",
-                                "}",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         }
     ]
 }

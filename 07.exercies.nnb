@@ -1,0 +1,81 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "### 1.Create a function to check if two objects are equal\nexample : \n- `isEqual({ a : 1, b : 2 }, { a : 1, b : 2 })` -> true\n- `isEqual({ a : 1 }, { b : 2 })` -> false\n- `isEqual({ a : 1 }, { a : 2 })` -> false"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// solution\nfunction isEqual (object1, object2) {\n    // validate the input\n    if (typeof object1 !== 'object' || typeof object2 !== 'object') return \"invalid input\"\n\n    // check if the length of the objects are equal\n    if (Object.keys(object1).length !== Object.keys(object2).length) return false\n\n    // check if the keys are equal\n    for (let key in object1) {\n        if (object1[key] !== object2[key]) return false\n    }\n\n    return true\n}\n\nconsole.log(isEqual({ a: 1, b: 2 }, { b: 2, a: 1 })) // true\nconsole.log(isEqual({ a: 1, b: 2 }, { a: 1, b: 2, c: 3 })) // false"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 2.Create a function to get the intersection of two objects\nexample :\n- `getInterSection({ a : 1, b : 2 }, { b : 2, c : 3})` -> `{ b : 2 }`\n- `getInterSection({ a : 1 }, { b : 2 })` -> -1"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// solution\nfunction getInterSection(object1, object2) {\n    // validate the input\n    if (typeof object1 !== 'object' || typeof object2 !== 'object') return \"invalid input\"\n\n    // check keys and value of object1 and object2\n    for (let key in object1) {\n        if (object1[key] !== object2[key]) delete object1[key]\n    }\n\n    // check if there an intersection\n    if (Object.keys(object1).length === 0) return -1 // there is no intersection\n\n    return object1\n}\n\nconsole.log(getInterSection({ a: 1, b: 2 }, { b: 2, a: 1 })) // { a: 1, b: 2 }\nconsole.log(getInterSection({ a: 1, b: 2 }, { a: 1, b: 2, c: 3 })) // { a: 1, b: 2 }\nconsole.log(getInterSection({ a: 1, b: 2 }, { a: 1, b: 2, c: 3, d: 4 })) // { a: 1, b: 2 }\nconsole.log(getInterSection({ a: 1, b: 2 }, { c: 3, d: 4 })) // -1"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 3.Create a function that can accept input as an array of objects and switch all values into property and property into value\nexample :\n- `switchKeyToValue([{ a : \"one\" }, { b : \"two\" }])` -> `{ \"one\" : \"a\", \"two\" : \"b\" }`"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// solution\nfunction switchKeyToValue(object) {\n    // validate the input\n    if (typeof object !== 'object') return \"invalid input\"\n\n    // create a new object\n    let newObject = {}\n    for (let key in object) {\n        newObject[object[key]] = key // switch key to value\n    }\n\n    return newObject\n}\n\nconsole.log(switchKeyToValue({ a: \"one\", b: \"two\" })) // { \"one\": 'a', \"two\": 'b' }"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 4. Create a function to merge two array of student data and remove duplicate data"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// solution\nfunction mergeTowArrayOfObjects(array1, array2) {\n    // validate input\n    if (!Array.isArray(array1) || !Array.isArray(array2)) return \"invalid input\"\n\n    // filter new array to be unique\n    let unionArray = [...array1, ...array2]\n    let namesValues = unionArray.map(object => object.name) // [\"Ahmed\", \"Sami\", \"Ali\", \"Sami\"]\n    const filteredArray = unionArray.filter(({ name }, index) => !namesValues.includes(name, index + 1))\n\n    return filteredArray\n}\n\nlet result = mergeTowArrayOfObjects(\n    [{ name: \"Ahmed\", email : \"ahmed@gmail.com\" }, { name: \"Sami\", email : \"sami@gmail.com\" }],\n    [{ name: \"Ali\", email : \"ali@gmail.com\"}, { name: \"Sami\", email : \"sami@gmail.com\"}]\n)\nconsole.log(result)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 5. Bank Account\nYou need to create a class called BankAccount that represents a bank account. It should have the following properties:\n\n- `accountNumber`: a string representing the account number\n- `accountHolder`: a string representing the account holder's name\n- `balance`: a number representing the account balance\n\nIt should also have the following methods:\n\n- `deposit(amount)`: a method that takes in a number representing the amount to deposit and adds it to the account balance. It should return the updated balance.\n- `withdraw(amount)`: a method that takes in a number representing the amount to withdraw and subtracts it from the account balance. It should return the updated balance.\n- `getBalance()`: a method that returns the current account balance.\n\nHere's an example usage of the BankAccount class:\n```javascript\nconst account = new BankAccount(\"1234567890\", \"John Smith\", 1000);\n\nconsole.log(account.getBalance()); // Output: 1000\n\naccount.deposit(500);\n\nconsole.log(account.getBalance()); // Output: 1500\n\naccount.withdraw(200);\n\nconsole.log(account.getBalance()); // Output: 1300\n```"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "class BankAccount {\n    constructor(_accountNumber, _accountHolder, _balance) {\n        this.accountNumber = _accountNumber\n        this.accountHolder = _accountHolder\n        this.balance = _balance\n    }\n\n    deposit(amount) {\n        this.balance += amount\n        return this.balance\n    }\n\n    withdraw(amount) {\n        if (amount > this.balance) return \"invalid operation\"\n        this.balance -= amount\n        return this.balance\n    }\n\n    getBalance() {\n        return this.balance\n    }\n}\n\nconst Account = new BankAccount(\"123456789\", \"Ahmed\", 1000)\nAccount.deposit(1000)\nAccount.deposit(500)\nconsole.log(Account.getBalance())\nAccount.withdraw(100)\nAccount.deposit(50)\nconsole.log(Account.getBalance())"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "class Bank {\n    accounts = []\n    constructor(_name) {\n        this.name = _name\n    }\n\n    addAccount(account) {\n        this.accounts.push(account)\n    }\n\n    getTotalBalance() {\n        let totalBalance = 0\n        this.accounts.forEach(account => {\n            totalBalance += account?.getBalance()\n        })\n        return totalBalance\n    }\n\n    getAccount(accountNumber) {\n        return this.accounts.find(account => account.accountNumber === accountNumber)\n    }\n}\n\nclass BankAccount {\n    constructor(_accountNumber, _accountHolder, _balance) {\n        this.accountNumber = _accountNumber\n        this.accountHolder = _accountHolder\n        this.balance = _balance\n    }\n\n    deposit(amount) {\n        this.balance += amount\n        return this.balance\n    }\n\n    withdraw(amount) {\n        if (amount > this.balance) return \"invalid operation\"\n        this.balance -= amount\n        return this.balance\n    }\n\n    getBalance() {\n        return this.balance\n    }\n}\n\nclass SavingAccount extends BankAccount {\n    constructor(_accountNumber, _accountHolder, _balance, _interestRate) {\n        super(_accountNumber, _accountHolder, _balance)\n        this.interestRate = _interestRate\n    }\n\n    addInterest() {\n        this.balance += this.balance * this.interestRate\n        return this.balance\n    }\n}\n\n\nconst MyBank = new Bank(\"MyBank\")\n\nconst Account1 = new BankAccount(\"123456789\", \"Ahmed\", 1000)\nconst Account2 = new BankAccount(\"987654321\", \"Ali\", 2000)\nconst Account3 = new SavingAccount(\"987654321\", \"Sami\", 3000, 0.1)\n\nMyBank.addAccount(Account1)\nMyBank.addAccount(Account2)\nMyBank.addAccount(Account3)\n\nconsole.log(MyBank.getTotalBalance())\n// console.log(MyBank.accounts)\n\nconsole.log(MyBank.getAccount(\"123456789\"))\nAccount1.deposit(1000)\n\nconsole.log(MyBank.getTotalBalance())\n\nif (Account3 instanceof SavingAccount) {\n    Account3.addInterest()\n}\nconsole.log(MyBank.getTotalBalance())\nAccount3.getBalance()\n"
+            ],
+            "outputs": []
+        }
+    ]
+}
