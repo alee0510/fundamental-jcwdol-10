@@ -1,0 +1,43 @@
+{
+    "cells": [
+        {
+            "language": "javascript",
+            "source": [
+                "// Stack Data Structure with Array Implementation\nclass Stack {\n    #maxSize\n    #elements = []\n\n    constructor(_maxSize) {\n        this.#maxSize = _maxSize\n    }\n\n    // push -> add element to the top of the stack\n    push(element) {\n        // check if the stack is full\n        if (this.#elements.length === this.#maxSize) return \"invalid operation.\"\n        return this.#elements?.push(element)\n    }\n\n    // pop -> remove element from the top of the stack\n    pop() {\n        // check if the stack is empty\n        if (this.#elements.length === 0) return \"invalid operation.\"\n        return this.#elements?.pop()\n    }\n\n    // peek -> get the top element of the stack\n    peek() {\n        // check if the stack is empty\n        if (this.#elements.length === 0) return -1 // -1 means the stack is empty\n        return this.#elements[this.#elements.length - 1]\n    }\n\n    // isEmpty -> check if the stack is empty\n    isEmpty() {\n        return this.#elements.length === 0\n    }\n\n    // isFull -> check if the stack is full\n    isFull() {\n        return this.#elements.length === this.#maxSize\n    }\n\n    // print -> print the stack\n    print() {\n        console.log(this.#elements)\n    }\n\n    // size -> get the size of the stack\n    size() {\n        return this.#elements.length\n    }\n\n    // clear -> clear the stack\n    clear() {\n        this.#elements = []\n    }\n\n    // elements -> get the elements of the stack\n    getElements() {\n        return this.#elements\n    }\n\n}\n\n// example\nconst StackData = new Stack(5)\nStackData.print()\nStackData.push(1)\nStackData.push(2)\nStackData.push(3)\nStackData.push(4)\nStackData.push(5)\nStackData.print()\nStackData.push(1)\nStackData.pop()\nStackData.pop()\nStackData.print()\nStackData.peek()\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Queue Data Structure with Array Implementation\nclass Queue {\n    #maxSize\n    #elements = []\n\n    constructor(_maxSize) {\n        this.#maxSize = _maxSize\n    }\n\n    // enqueue -> add element to the end of the queue\n    enqueue(element) {\n        // check if the queue is full\n        if (this.#elements.length === this.#maxSize) return \"invalid operation.\"\n        return this.#elements?.push(element)\n    }\n\n    // dequeue -> remove element from the front of the queue\n    dequeue() {\n        // check if the queue is empty\n        if (this.#elements.length === 0) return \"invalid operation.\"\n        return this.#elements?.shift()\n    }\n\n    // peek -> get the front element of the queue\n    peek() {\n        // check if the queue is empty\n        if (this.#elements.length === 0) return -1 // -1 means the queue is empty\n        return this.#elements[0]\n    }\n\n    // isEmpty -> check if the queue is empty\n    isEmpty() {\n        return this.#elements.length === 0\n    }\n\n    // isFull -> check if the queue is full\n    isFull() {\n        return this.#elements.length === this.#maxSize\n    }\n\n    // print -> print the queue\n    print() {\n        console.log(this.#elements)\n    }\n\n    // size -> get the size of the queue\n    size() {\n        return this.#elements.length\n    }\n\n    // getElements -> get the elements of the queue\n    getElements() {\n        return this.#elements\n    }\n}\n\n// example\nconst QueueData = new Queue(5)\nQueueData.print()\nQueueData.enqueue(1)\nQueueData.enqueue(2)\nQueueData.enqueue(3)\nQueueData.print()\nQueueData.peek()\nQueueData.dequeue()\nQueueData.print()\nQueueData.peek()\nQueueData.size()"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Set Data Structure with Array Implementation\nclass Set {\n    #maxSize\n    #elements = []\n\n    constructor(_maxSize) {\n        this.#maxSize = _maxSize\n    }\n\n    // add -> add element to the set\n    add(element) {\n        // check if the set is full\n        if (this.#elements.length === this.#maxSize) return \"invalid operation.\"\n\n        // check if the element is already in the set\n        if (this.#elements.includes(element)) return -1 // -1 means the element is already in the set\n\n        return this.#elements?.push(element)\n    }\n\n    // delete -> delete element from the set\n    delete(element) {\n        // check if the set is empty\n        if (this.#elements.length === 0) return \"invalid operation.\"\n\n        // check if the element is in the set\n        if (!this.#elements.includes(element)) return -1 // -1 means the element is not in the set\n\n        const indexOfTheElement = this.#elements.indexOf(element)\n        return this.#elements?.splice(indexOfTheElement, 1)\n    }\n\n    // has -> check if the element is in the set\n    has(element) {\n        return this.#elements.includes(element)\n    }\n\n    // entries -> get the elements of the set\n    entries() {\n        return this.#elements\n    }\n\n    // isEmpty -> check if the set is empty\n    isEmpty() {\n        return this.#elements.length === 0\n    }\n\n    // isFull -> check if the set is full\n    isFull() {\n        return this.#elements.length === this.#maxSize\n    }\n\n    // size -> get the size of the set\n    size() {\n        return this.#elements.length\n    }\n\n    // clear -> clear the set\n    clear() {\n        this.#elements = []\n    }\n\n    // print -> print the set\n    print() {\n        console.log(this.#elements)\n    }\n}\n\n// example\nconst SetData = new Set(5)\nSetData.print()\nSetData.add(1)\nSetData.add(2)\nSetData.add(3)\nSetData.print()\nSetData.delete(2)\nSetData.print()\nSetData.has(2)\nSetData.has(3)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Map vs Objects\nconst User = {\n    name: \"John\",\n    age: 20,\n    true : \"yes\",\n}\n\nUser.true // SyntaxError: Unexpected number\nUser[\"true\"] // \"yes\"\n\nconst NewUser = new Map([\n    [\"name\", \"John\"],\n    [\"age\", 20],\n    [true, \"yes\"],\n    [1, \"one\"]\n])\n\nNewUser.get(\"name\") // \"John\"\nNewUser.get(true) // \"yes\"\nNewUser.get(1) // \"one\"\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[32m'one'\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
