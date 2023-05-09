@@ -1,0 +1,32 @@
+{
+    "cells": [
+        {
+            "language": "javascript",
+            "source": [
+                "// function -> block code {} -> membungkus logic, code, atau instruction yang bisa dipanggil berulang-ulang\n// purpose -> to make our code more organized, modular, reusable and easier to read\n\n\n// logic -> console.log('Hello World'); 10x\nconsole.log('Hello World');\nconsole.log('Hello World');\nconsole.log('Hello World');\nconsole.log('Hello World');\nconsole.log('Hello World');\n// ...\n\n// for loop\nfor (let i = 0; i < 10; i++) {\n  console.log('Hello World');\n}\n\n// function\nfunction sayHello10times () {\n    for (let i = 0; i < 10; i++) {\n        console.log('Hello World');\n    }\n}\n\n// ....\n// call the function\nsayHello10times()\n\ndisplayString()\n// modify the function to make it more universal\nfunction displayString (str = \"\", n_times = 0) {\n    for (let i = 0; i < n_times; i++) {\n        console.log(str)\n    }\n}\n\n// call the function\ndisplayString()\ndisplayString(\"Hello\", 5)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Quiz 2 :\nfunction divisibleSumPairs (arrays, n, k) {\n    let pair = 0\n    for ( let i = 0; i < n - 1; i++) {\n        for (let j = i + 1; j < n; j++) {\n            if ((arrays[i] + arrays[j]) % k === 0) {\n                console.log(arrays[i], arrays[j])\n                pair += 1\n            }\n        }\n    }\n\n    return pair\n}\n\nconsole.log(divisibleSumPairs([1, 3, 2, 6, 1, 2], 6, 3)) // 5"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Quiz 4 :\nfunction biggerIsGreater (words) {\n    if (words.length <= 1) return 'no answer'\n    if (words.length === 2) {\n        if (words[0] < words[1]) return words[1] + words[0]\n        return 'no answer'\n    }\n\n    if (words[words.length - 1] > words[words.length - 2]) {\n        return words.slice(0, words.length - 2) + words[words.length - 1] + words[words.length - 2]\n    }\n\n    let firstChar = words[0]\n    let sortedChar = words.split('').sort()\n    if (firstChar === sortedChar[sortedChar.length - 1]) return 'no answer'\n\n    let newFirstChar = sortedChar.splice(sortedChar.indexOf(firstChar) + 1, 1)\n    return newFirstChar + sortedChar.join(\"\") \n}\n\nconsole.log(biggerIsGreater('a')) // no answer\nconsole.log(biggerIsGreater('ab')) // ba\nconsole.log(biggerIsGreater('bb')) // no answer\nconsole.log(biggerIsGreater('hefg')) // hegf\nconsole.log(biggerIsGreater('dhck')) // dhkc\nconsole.log(biggerIsGreater('dkhc')) // hcdk\nconsole.log(biggerIsGreater('fedcbabcd')) // fedcbabdc\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Problem 1\nclass Employee {\n    constructor(_name, _salary) {\n        this.name = _name\n        this.salary = _salary\n    }\n\n    getSalary () {\n        return this.salary\n    }\n}\nconst NewEmployee = new Employee(\"Andre\", 0)\n\nclass FullTimeEmployee extends Employee {\n    constructor(_name, _salary) {\n        super(_name, _salary)\n    }\n\n    workingHourPerDay (hours) {\n        if (hours >= 6) {\n            this.salary += 600000 + ((hours - 6) * 75000)\n            return\n        }\n        this.salary += 100000 * hours\n    }\n}\n\nclass PartTimeEmployee extends Employee {\n    constructor(_name, _salary) {\n        super(_name, _salary)\n    }\n\n    workingHourPerDay (hours) {\n        if (hours >= 6) {\n            this.salary += 300000 + ((hours - 6) * 30000)\n            return\n        }\n        this.salary += 50000 * hours\n    }\n}\n\n\n// implementasi\nconst fullTimeEmployee = new FullTimeEmployee('John', 0)\nconst partTimeEmployee = new PartTimeEmployee('Doe', 0)\n\nfullTimeEmployee.workingHourPerDay(8)\nfullTimeEmployee.workingHourPerDay(4)\n\npartTimeEmployee.workingHourPerDay(8)\npartTimeEmployee.workingHourPerDay(4)\n\nconsole.log(fullTimeEmployee.getSalary()) // 600000\nconsole.log(partTimeEmployee.getSalary()) // 240000"
+            ],
+            "outputs": []
+        }
+    ]
+}

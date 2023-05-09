@@ -1,0 +1,46 @@
+{
+    "cells": [
+        {
+            "language": "javascript",
+            "source": [
+                "// Q(1) -> constant time\nfunction ContantTime (n) {\n    console.log(n)\n}\n\nContantTime(10)\n\n// Q(n) -> linear time\nfunction SayHello (n) {\n    for (let i = 0; i < n; i++) {\n        console.log('Hello')\n    }\n}\n\nSayHello(1)\nSayHello(10)\nSayHello(100)\n\n// Q(n^2) -> quadratic time\n\nfunction QuadraticTimeExample (n) {\n    for (let i = 1; i < n; i++) {\n        for (let j = 1; j < n; j++) {\n            console.log(i, j)\n        }\n    }\n}\n\n// Q(log n) -> logarithmic time"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// linear search -> O(n)\nfunction LinearSearch (array, item) {\n    for (let i = 0; i < array.length; i++) {\n        if (array[i] === item) {\n            return i\n        }\n    }\n    return -1\n}\n\nconsole.log(LinearSearch([1, 2, 3, 4, 5], 3))\n\n// binary search -> O(log n)\nfunction BinarySearch (array, item) {\n    let lowIndex = 0\n    let hightIndex = array.length - 1\n    while( lowIndex <= hightIndex) {\n        let midIndex = Math.floor((lowIndex + hightIndex) / 2)\n        if (array[midIndex] === item) {\n            return midIndex\n        } else if (item > array[midIndex]) {\n            lowIndex = midIndex + 1\n        } else {\n            hightIndex = midIndex - 1\n        }\n    }\n\n    return -1\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Sorting Algorithms\n// 01. Maximum Value -> O(n)\nfunction MaximumValue (array) {\n    for (let i = 0; i < array.length - 1; i++) {\n        if (array[i] > array[i + 1]) {\n            // swap\n            let temp = array[i]\n            array[i] = array[i + 1]\n            array[i + 1] = temp\n        }\n    }\n\n    return array[array.length - 1]\n}\n\nconsole.log(MaximumValue([1, 2, 3, 4, 5, 6, 7, 8, 9]))\nconsole.log(MaximumValue([9, 8, 7, 6, 5, 4, 3, 2, 1]))"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// 02. Bubble Sort -> O(n^2)\nfunction BubbleSort (array) {\n    for (let i = 0; i < array.length - 1; i++) {\n        for (let j = 0; j < array.length - i - 1; j++) {\n            if (array[j] > array[j + 1]) {\n                // swap\n                let temp = array[j]\n                array[j] = array[j + 1]\n                array[j + 1] = temp\n            }\n        }\n    }\n\n    return array\n}\n\nconsole.log(BubbleSort([60, 50, 95, 80, 70]))"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// 03. Minimum Value -> O(n)\nfunction MinimumValue (array) {\n    let minIndex = 0\n    for (let i = 0; i < array.length - 1; i++) {\n        if (array[minIndex] > array[i + 1]) {\n            minIndex = i + 1\n        }\n    }\n\n    return array[minIndex]\n}\n\nconsole.log(MinimumValue([60, 50, 95, 80, 70]))"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// 04. Selection Sort -> O(n^2)\nfunction SelectionSort (array) {\n    let minIndex\n    for (let i = 0; i < array.length; i++) {\n        minIndex = i\n        for (let j = i + 1; j < array.length; j++) {\n            if (array[minIndex] > array[j]) {\n                minIndex = j\n            }\n        }\n\n        // swap position\n        if (i !== minIndex) {\n            let temp = array[i]\n            array[i] = array[minIndex]\n            array[minIndex] = temp\n        }\n    }\n\n    return array\n}\n\nconsole.log(SelectionSort([60, 50, 95, 80, 70]))"
+            ],
+            "outputs": []
+        }
+    ]
+}
