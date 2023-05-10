@@ -1,0 +1,46 @@
+{
+    "cells": [
+        {
+            "language": "javascript",
+            "source": [
+                "// function sequence without callback\nfunction sayHello () {\n    console.log('Hello,');\n}\n\nfunction greeting (name) {\n    console.log('My Name is,  ' + name);\n}\n\nfunction sayGoodbye () {\n    console.log('Goodbye.');\n}\n\n// call function\nsayHello();\ngreeting('Nur');\nsayGoodbye();"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// sequence call of function\nfunction sayHello () {\n    console.log('Hello,');\n    greeting('Nur');\n    sayGoodbye();\n}\n\nfunction greeting (name) {\n    console.log('My Name is,  ' + name);\n}\n\nfunction sayGoodbye () {\n    console.log('Goodbye.');\n}\n\n// call function\nsayHello();"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "> NOTE :\n> best practice to create a function it to make the function purely -> pure function\n> pure function doesn't depend on outer dependecies"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// pure function vs not pure function\nlet name = \"Nur\"\nfunction sayMyName () {\n    console.log(\"Hello, My Name is\", name)\n}\n\nsayMyName()\n\n// pure function\nfunction anotherSayMyName (name = \"\") {\n    // if the input is empty\n    if (!name) return -1\n    console.log(\"Hello, My Name is\", name)\n}\nanotherSayMyName(\"Nur\")\nanotherSayMyName()"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// callback function\nfunction sayMyName (name) {\n    console.log(\"Hello, My Name is\", name)\n}\n\nfunction greeting (name, callback) {\n    console.log(\"Greeting...\")\n    callback(name)\n}\n\ngreeting(\"ale\", sayMyName)\n\n// another example\nfunction sumTwoNumber (num1, num2) {\n    return num1 + num2\n}\n\nfunction multiplyTwoNumber (num1, num2) {\n    return num1 * num2\n}\n\nfunction displayResult (num1, num2, callback) {\n    let result = callback(num1, num2)\n    console.log(\"result\", result)\n}\n\ndisplayResult(10, 20, sumTwoNumber)\ndisplayResult(10, 20, multiplyTwoNumber)\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// nested callback function\nfunction introduce (name, callback, callback2) {\n    console.log(\"Hai,...\")\n    callback(name, callback2)\n}\n\nfunction greeting (name, callback) {\n    console.log(\"Greeting.., may name is\", name)\n    callback()\n}\n\nfunction sayGoodbye () {\n    console.log(\"Goodbye.\")\n}\n\nintroduce(\"Nur\", greeting, sayGoodbye)\n\nintroduce(\"Nur\", \n    function (name, callback) {\n        console.log(\"Greeting.., may name is\", name)\n        callback()\n    }\n    ,() => console.log(\"Goodbye.\")\n)"
+            ],
+            "outputs": []
+        }
+    ]
+}
