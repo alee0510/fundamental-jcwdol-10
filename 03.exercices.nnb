@@ -12,20 +12,7 @@
             "source": [
                 "let areaOfReactangle\nlet width = 10.5 // m\nlet height = 7.5 // m\nareaOfReactangle = width * height\nconsole.log(\"Area Of Rectangle: \",areaOfReactangle.toFixed() + \" m2\")\nconsole.log(\"Area Of Rectangle: \",Math.floor(areaOfReactangle) + \" m2\")"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "Area Of Rectangle:  79 m2",
-                                "Area Of Rectangle:  78 m2",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -39,19 +26,7 @@
             "source": [
                 "let perimeterOfReactangle\nlet width = 10.1 // m\nlet height = 7.5 // m\nperimeterOfReactangle = 2 * (width + height)\nconsole.log(\"Perimeter Of Rectangle: \",perimeterOfReactangle + \" m\")"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "Perimeter Of Rectangle:  35.2 m",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -65,21 +40,7 @@
             "source": [
                 "const PI = Math.PI\nconst radius = 6.3 // m\n\n// diameter\nconst diameter = 2 * radius\nconsole.log(\"Diameter: \",diameter + \" m\")\n\n// circumference\nconst circumference = 2 * PI * radius\nconsole.log(\"Circumference: \",circumference.toFixed(3) + \" m\")\n\n// area\nconst area = PI * radius * radius\nconsole.log(\"Area: \",area.toFixed() + \" m2\")\n"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "Diameter:  12.6 m",
-                                "Circumference:  39.584 m",
-                                "Area:  125 m2",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -93,29 +54,7 @@
             "source": [
                 "// NOTES : \n/// Date Object\nlet date = new Date() // current date\nconsole.log(\"date : \", date)\nconsole.log(\"date-to-string : \", date.toDateString())\nconsole.log(\"date-to-time : \", date.toTimeString())\nconsole.log(\"date-to-local-string : \", date.toLocaleString())\nconsole.log(\"time : \", date.getTime()) // timestamp (milliseconds)\nconsole.log(\"date : \", date.getDate()) // date of the month\nconsole.log(\"month : \", date.getMonth()) // month of the year, start from 0\nconsole.log(\"year : \", date.getFullYear()) // year\nconsole.log(\"day : \", date.getDay()) // day of the week\n\nlet customDate = new Date(\"2020-12-25\")\nconsole.log(\"custom-date : \", customDate)\n\n// solution\nconst firstDate = new Date(\"2020-01-01\")\nconst secondDate = new Date(\"2020-03-05\")\nconst diff = secondDate.getTime() - firstDate.getTime() // milliseconds\nconst diffDays = diff / (1000 * 3600 * 24) // days\nconsole.log(\"diff-days : \", diffDays, \"days\")"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "date :  2023-04-12T13:03:05.242Z",
-                                "date-to-string :  Wed Apr 12 2023",
-                                "date-to-time :  20:03:05 GMT+0700 (Western Indonesia Time)",
-                                "date-to-local-string :  4/12/2023, 8:03:05 PM",
-                                "time :  1681304585242",
-                                "date :  12",
-                                "month :  3",
-                                "year :  2023",
-                                "day :  3",
-                                "custom-date :  2020-12-25T00:00:00.000Z",
-                                "diff-days :  64 days",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -129,19 +68,7 @@
             "source": [
                 "const celciusToFahrenheit = 33.8\nconst initialTemp = 12 // C\nconst finalTemp = initialTemp * (9/5) + celciusToFahrenheit\nconsole.log(\"final-temp : \", finalTemp, \"F\")"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "final-temp :  55.4 F",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -155,19 +82,7 @@
             "source": [
                 "const primeNumberCandidate = 6\n\n// check if the number is prime or not\nlet isPrime = true\nfor (let i = 2; i < primeNumberCandidate; i++) {\n    if (primeNumberCandidate % i === 0) {\n        isPrime = false\n        break\n    }\n}\n\nconsole.log(primeNumberCandidate,\"is-prime ?\", isPrime)"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "6 is-prime ? false",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -181,19 +96,7 @@
             "source": [
                 "let number = 5\nlet factorial = 1\n\n// forward\nfor (let i = 2; i <= number; i++) {\n    factorial *= i\n}\n\n// reverse\nfor (let i = number; i >= 1; i--) {\n    factorial *= i\n}\n\nwhile(number > 0) {\n    factorial *= number\n    number--\n}\nconsole.log(\"factorial : \", factorial)"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "factorial :  120",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -207,19 +110,7 @@
             "source": [
                 "let showNFibonanciSequence = 5\nlet fibonanciSequence = ``\n\nlet first = 1\nlet second = 1\nlet next = 0\n\nfor (let i = 0; i < showNFibonanciSequence; i++) {\n    if (i <= 1) {\n        next = i\n    } else {\n        next = first + second\n        first = second\n        second = next\n    }\n    fibonanciSequence += `${next}, `\n}\nconsole.log(\"fibonanci-sequence : \", fibonanciSequence)"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "fibonanci-sequence :  0, 1, 2, 3, 5, ",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -233,19 +124,7 @@
             "source": [
                 "let palindromStringCandidate = \"travis\"\nlet isPalindrom = true\n\n// m\nfor (let i = 0; i < Math.floor(palindromStringCandidate.length / 2); i++) {\n    if (palindromStringCandidate.charAt(i) !== palindromStringCandidate.charAt(palindromStringCandidate.length - 1 - i)) {\n        isPalindrom = false\n        break\n    }\n}\n\nconsole.log(\"is-palindrom : \", isPalindrom)\n"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "is-palindrom :  false",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -259,43 +138,14 @@
             "source": [
                 "// solution 1 -> build-in method replace\nlet inputString = \"Hello World\"\nlet outputString = inputString.replace(\"ell\", \"\")\nconsole.log(\"output-string : \", outputString)"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "output-string :  Ho World",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "typescript",
             "source": [
                 "// another solution\n// NOTE :\n// delete chart at certain index in string\nlet anotherInputString = \"Hello World\"\nconsole.log(\"output-01 : \", anotherInputString.replace(\"l\", \"x\"))\nconsole.log(\"output-02 : \", anotherInputString.replaceAll(\"l\", \"x\"))\nconsole.log(\"output-03 : \", anotherInputString.slice(3)) // delete first 3 chart\nconsole.log(\"output-04 : \", anotherInputString.slice(0, 3)) // slice from 0 to 2\nconsole.log(\"output-05 : \", anotherInputString.slice(3, 5)) // slice from 0 to 4\nconsole.log(\"original-input : \", anotherInputString)\n"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "output-01 :  Hexlo World",
-                                "output-02 :  Hexxo Worxd",
-                                "output-03 :  lo World",
-                                "output-04 :  Hel",
-                                "output-05 :  lo",
-                                "original-input :  Hello World",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -309,19 +159,7 @@
             "source": [
                 "let toCapitalizeString = \"This is a example of a title\" // \"Hello World Again\"\ntoCapitalizeString = toCapitalizeString.charAt(0).toUpperCase() + toCapitalizeString.slice(1)\n\nfor(let i = 1; i < toCapitalizeString.length; i++) {\n    if (toCapitalizeString.charAt(i) === \" \") {\n        toCapitalizeString = toCapitalizeString.slice(0, i + 1) + toCapitalizeString.charAt(i + 1).toUpperCase() + toCapitalizeString.slice(i + 2)\n\n        // breakdown step => i = 5 => chart at index 5 is \" \"\n        // toCapitalizeString.slice(0, 5 + 1) => \"Hello \"\n        // toCapitalizeString.charAt(5 + 1).toUpperCase() => \"W\"\n        // toCapitalizeString.slice(5 + 2) => \"orld again\"\n        // if i == 5 => temp result => Hello World again\n    }\n}\nconsole.log(\"to-capitalize-string : \", toCapitalizeString)"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "to-capitalize-string :  This Is A Example Of A Title",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         }
     ]
 }

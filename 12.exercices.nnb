@@ -1,0 +1,25 @@
+{
+    "cells": [
+        {
+            "language": "javascript",
+            "source": [
+                "// Problem 01\nfunction convertStringToColoumnNumber (str) {\n    let uppercase = str.toUpperCase()\n    \n    // validate input\n    if (typeof str !== 'string') return 'Invalid input'\n\n    // convert string to column number with A = 1, Z = 26, AA = 27, ...\n    // chartCode from A to Z is 65 to 90\n    if (uppercase.length === 1) return str.charCodeAt(0) - 64\n    return 26 * (uppercase.charCodeAt(0) - 64) + (uppercase.charCodeAt(1) - 64)\n}\n\nconsole.log(convertStringToColoumnNumber())\nconsole.log(convertStringToColoumnNumber('Z'))\nconsole.log(convertStringToColoumnNumber('AA'))\nconsole.log(convertStringToColoumnNumber('AZ'))\nconsole.log(convertStringToColoumnNumber('BA'))\nconsole.log(convertStringToColoumnNumber('ZZ'))"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Problem 02\nfunction findTheSingleNumber (arrayOfInteger) {\n    if (!Array.isArray(arrayOfInteger)) return 'Invalid input'\n    if (arrayOfInteger.length === 0) return -1\n    if (arrayOfInteger.length === 1) return arrayOfInteger[0]\n\n    let i = 0\n    let sortedArrayOfInteger = arrayOfInteger.sort()\n    while (i < sortedArrayOfInteger.length) {\n        if (!sortedArrayOfInteger.includes(sortedArrayOfInteger[i], i + 1)) return sortedArrayOfInteger[i]\n        i += 2\n    }\n}\n\nconsole.log(findTheSingleNumber([1, 1, 2, 2, 3, 4, 4, 5, 5]))\nconsole.log(findTheSingleNumber([1, 1, 2, 2, 3, 3, 4, 4, 5]))"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Problem 04"
+            ],
+            "outputs": []
+        }
+    ]
+}

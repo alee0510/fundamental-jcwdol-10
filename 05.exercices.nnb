@@ -12,29 +12,7 @@
             "source": [
                 "function generateTrianglePattern (height = 0) {\n    let value = 0\n    let pattern = \"\"\n    for (let row = 1; row <= height; row++) {\n        for (let col = 1; col <= row; col++) {\n            value++\n            pattern += `${value.toString().padStart(2, \"0\")} `\n        }\n        pattern += \"\\n\"\n    }\n    console.log(pattern)\n}\n\ngenerateTrianglePattern(10)"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "01 ",
-                                "02 03 ",
-                                "04 05 06 ",
-                                "07 08 09 10 ",
-                                "11 12 13 14 15 ",
-                                "16 17 18 19 20 21 ",
-                                "22 23 24 25 26 27 28 ",
-                                "29 30 31 32 33 34 35 36 ",
-                                "37 38 39 40 41 42 43 44 45 ",
-                                "46 47 48 49 50 51 52 53 54 55 ",
-                                "",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -48,47 +26,14 @@
             "source": [
                 "function generateOneZeroOnePattern (height = 0) {\n    let pattern = \"\"\n    \n    // generate row according to its height input parameter\n    for (let row = 1; row <= height; row++) {\n        let value = row % 2 === 0 ? 1 : 0 // 1\n\n        // loop for generating column number according to its row number\n        for (let col = 1; col <= row; col++) {\n            value = value ? 0 : 1\n            pattern += `${value} `\n        }\n\n        // generate new line\n        pattern += \"\\n\"\n    }\n\n    console.log(pattern)\n}\n\ngenerateOneZeroOnePattern(5)"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "1 ",
-                                "0 1 ",
-                                "1 0 1 ",
-                                "0 1 0 1 ",
-                                "1 0 1 0 1 ",
-                                "",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "javascript",
             "source": [
                 "function generatePalindromTrianglePattern (height = 0) {\n    let pattern = \"\"\n\n    // generate row according to its height input parameter\n    for (let row = 0; row < height; row ++) {\n        for (let col = 0; col < height + row; col++) {\n            let value = height - col\n            if (height - (row + 1) <= col) {\n                value = value <= 0 ? (col + 2 - height): value\n                pattern += `${value} `\n            } else {\n                pattern += `* `\n            }\n        }\n\n        pattern += \"\\n\"\n    }\n\n    console.log(pattern)\n}\n\ngeneratePalindromTrianglePattern(4)"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "* * * 1 ",
-                                "* * 2 1 2 ",
-                                "* 3 2 1 2 3 ",
-                                "4 3 2 1 2 3 4 ",
-                                "",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -102,19 +47,7 @@
             "source": [
                 "function fizzBuzz (length = 0) {\n    let result = \"\"\n    for (let i = 1; i <= length; i++) {\n        let output = \"\"\n        if (i % 3 === 0) {\n            output += \"Fizz\"\n        }\n        if (i % 5 === 0) {\n            output += \"Buzz\"\n        }\n        result += `${output || i}, `\n    }\n    console.log(result)\n}\n\nfizzBuzz(15)"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz, ",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -128,38 +61,14 @@
             "source": [
                 "let data = []\nfunction addNewElement (newElement = \"\") {\n    // let alreadyExist = false\n    // for (let i = 0; i < data.length; i++) {\n    //     if (data[i] === newElement) {\n    //         alreadyExist = true\n    //         break\n    //     }\n    // }\n    \n    let alreadyExist = data.includes(newElement)\n    if (alreadyExist) return\n    \n    data.push(newElement)\n}\n\naddNewElement(\"a\")\naddNewElement(\"b\")\naddNewElement(\"c\")\naddNewElement(\"a\")\nconsole.log(data)"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "[ 'a', 'b', 'c' ]",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "javascript",
             "source": [
                 "// set object\nlet data2 = new Set()\ndata2.add(\"a\")\ndata2.add(\"b\")\ndata2.add(\"c\")\ndata2.add(\"a\")\nconsole.log(Array.from(data2))"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "[ 'a', 'b', 'c' ]",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         },
         {
             "language": "markdown",
@@ -173,19 +82,7 @@
             "source": [
                 "function removeAllOddNumbersFromArray (array) {\n    let result = []\n    for (let i = 0; i < array.length; i++) {\n        if (array[i] % 2 === 0) {\n            result.push(array[i])\n        }\n    }\n    return result\n}\n\nconsole.log(removeAllOddNumbersFromArray([1, 2, 3, 4, 5, 6, 7, 8, 9]))"
             ],
-            "outputs": [
-                {
-                    "items": [
-                        {
-                            "mime": "application/vnd.code.notebook.stdout",
-                            "value": [
-                                "[ 2, 4, 6, 8 ]",
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "outputs": []
         }
     ]
 }
