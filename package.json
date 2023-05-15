@@ -1,0 +1,22 @@
+{
+  "name": "fundamental",
+  "version": "1.0.0",
+  "description": "\"M01 - Fundamental\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alee0510/fundamental-jcwdol-10.git"
+  },
+  "author": "alee0510",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alee0510/fundamental-jcwdol-10/issues"
+  },
+  "homepage": "https://github.com/alee0510/fundamental-jcwdol-10#readme",
+  "dependencies": {
+    "jest" : "^26.6.3"
+  }
+}

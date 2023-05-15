@@ -13,13 +13,6 @@
                 "// Problem 02\nfunction findTheSingleNumber (arrayOfInteger) {\n    if (!Array.isArray(arrayOfInteger)) return 'Invalid input'\n    if (arrayOfInteger.length === 0) return -1\n    if (arrayOfInteger.length === 1) return arrayOfInteger[0]\n\n    let i = 0\n    let sortedArrayOfInteger = arrayOfInteger.sort()\n    while (i < sortedArrayOfInteger.length) {\n        if (!sortedArrayOfInteger.includes(sortedArrayOfInteger[i], i + 1)) return sortedArrayOfInteger[i]\n        i += 2\n    }\n}\n\nconsole.log(findTheSingleNumber([1, 1, 2, 2, 3, 4, 4, 5, 5]))\nconsole.log(findTheSingleNumber([1, 1, 2, 2, 3, 3, 4, 4, 5]))"
             ],
             "outputs": []
-        },
-        {
-            "language": "javascript",
-            "source": [
-                "// Problem 04"
-            ],
-            "outputs": []
         }
     ]
 }
